@@ -6,11 +6,7 @@ namespace Catalog.API.Data
 {
     public class CatalogContext : ICatalogContext
     {
-        //public readonly IMongoDatabase _database;
-        //public readonly IMongoCollection<Product> _collection;
-
-
-
+       
         public CatalogContext(IConfiguration _config)
         {
             var _client=new MongoClient(_config.GetValue<string>("DatabaseSettings:ConnectionString"));
@@ -18,11 +14,7 @@ namespace Catalog.API.Data
                 ("DatabaseSettings:DatabaseName"));
 
             Products = _database.GetCollection<Product>(_config.GetValue<string>
-                ("DatabaseSettings:CollectionName"));
-
-            //_database = client.GetDatabase("Productdb");
-
-            //_collection = _database.GetCollection<Product>("Products");
+                ("DatabaseSettings:CollectionName"));           
 
             CatalogContextSeed.SeedData(Products);
 

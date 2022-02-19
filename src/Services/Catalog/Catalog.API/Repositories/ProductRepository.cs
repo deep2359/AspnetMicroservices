@@ -80,16 +80,7 @@ namespace Catalog.API.Repositories
                 .Products
                 .DeleteOneAsync(filter);
             return result.IsAcknowledged && result.DeletedCount > 0;
-        }
-
-       
-
-       
-
-       
-
-       
-
+        }       
        
     }
 }
