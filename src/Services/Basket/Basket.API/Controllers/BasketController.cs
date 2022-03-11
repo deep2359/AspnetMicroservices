@@ -73,7 +73,7 @@ namespace Basket.API.Controllers
         [HttpPost]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.Accepted)]
-        public async Task<ActionResult> CheckoutBasket([FromBody] BasketCheckout basketCheckout)
+        public async Task<ActionResult> Checkout([FromBody] BasketCheckout basketCheckout)
         {
             //Get existing basket with total price
             //Create BasketCheckoutEvent - Set TotalPrice on basketCheckout eventMessage with bascket
